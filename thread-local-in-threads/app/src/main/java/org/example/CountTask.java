@@ -8,8 +8,8 @@ import java.util.concurrent.Callable;
 import lombok.Builder;
 
 public class CountTask implements Callable<CountTask.Info> {
-    private final static ThreadLocal<Info> threadInfo = new ThreadLocal<>();
-    private final static int MAX_COUNT = 50_000_000;
+    private static final ThreadLocal<Info> threadInfo = new ThreadLocal<>();
+    private static final int MAX_COUNT = 50_000_000;
 
     private final Info info;
 
