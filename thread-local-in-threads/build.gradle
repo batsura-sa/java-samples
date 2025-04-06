@@ -10,6 +10,7 @@ plugins {
     id 'application'
 }
 
+
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
@@ -39,6 +40,15 @@ java {
     }
 }
 
+/*
+tasks.withType(JavaCompile) {
+    options.compilerArgs += ['--enable-preview']
+}
+
+tasks.withType(Test) {
+    jvmArgs += '--enable-preview'
+}
+*/
 
 tasks.named('test') {
     // Use JUnit Platform for unit tests.
