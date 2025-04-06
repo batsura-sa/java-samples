@@ -10,8 +10,8 @@ import lombok.Builder;
 import static java.lang.Thread.sleep;
 
 public class SleepTask implements Callable<SleepTask.Info> {
-    private final static ThreadLocal<Info> threadInfo = new ThreadLocal<>();
-    private final static int MAX_WAIT_TIME_MS = 5000;
+    private static final ThreadLocal<Info> threadInfo = new ThreadLocal<>();
+    private static final int MAX_WAIT_TIME_MS = 5000;
 
     private final Info info;
 
