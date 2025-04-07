@@ -19,12 +19,8 @@ public class CountTask implements Callable<CountTask.Info> {
 
     @Override
     public Info call() {
-        Random random = new Random();
         double result = 0;
-        for (int i = 0; i < MAX_COUNT; i++) {
-            result += Math.sqrt(random.nextDouble());
 
-        }
         threadInfo.set(
                 info.toBuilder()
                         .callThreadName(Thread.currentThread().getName())
@@ -32,6 +28,11 @@ public class CountTask implements Callable<CountTask.Info> {
                         .result(result)
                         .build()
         );
+
+        Random random = new Random();
+        for (int i = 0; i < MAX_COUNT; i++) {
+            result += Math.sqrt(random.nextDouble());
+        }
 
         return threadInfo.get();
     }
